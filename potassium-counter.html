@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Potassium Counter</title>
+		<script>
+			let foods = [
+				// name, calories, units (grams), potassium (mg).
+				// Put zero if not applicable.
+				["Banana (without skin)", 81, 100, 358],
+				["Onion red (raw)", 38, 100, 146],
+				["Crooks (baby cucumber)", 14, 100, 147],
+			];
+
+			window.onload = function() {
+				let foodList = document.getElementById("foodList");
+				for (let i = 0; i < foods.length; i++) {
+					foodList.options[i] = new Option(foods[i][0], i);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>Potassium Counter</h3>
+		<div>
+			<label>Choose a food:</label>
+			<select id="foodList"></select>
+		</div>
+	</body>
+</html>
