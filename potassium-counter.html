@@ -9,6 +9,14 @@
 				["Crooks (baby cucumber)", 14, 100, 147],
 			];
 
+			function compareFoods(a, b) {
+				if (a[0] < b[0]) return -1;
+				if (a[0] > b[0]) return 1;
+				return 0;
+			}
+
+			foods.sort(compareFoods);
+
 			window.onload = function() {
 				let foodList = document.getElementById("foodList");
 				for (let i = 0; i < foods.length; i++) {
