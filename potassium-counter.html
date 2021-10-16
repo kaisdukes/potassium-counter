@@ -5,17 +5,9 @@
 			let foods = [
 				// (1) name, (2) calories, (3) units (grams), (4) potassium (mg). Put zero if not applicable.
 				["Banana (without skin)", 81, 100, 358],
-				["Onion red (raw)", 38, 100, 146],
 				["Crooks (baby cucumber)", 14, 100, 147],
+				["Onion red (raw)", 38, 100, 146],
 			];
-
-			function compareFoods(a, b) {
-				if (a[0] < b[0]) return -1;
-				if (a[0] > b[0]) return 1;
-				return 0;
-			}
-
-			foods.sort(compareFoods);
 
 			window.onload = function() {
 				let foodList = document.getElementById("foodList");
