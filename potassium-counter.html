@@ -3,8 +3,7 @@
 		<title>Potassium Counter</title>
 		<script>
 			let foods = [
-				// name, calories, units (grams), potassium (mg).
-				// Put zero if not applicable.
+				// (1) name, (2) calories, (3) units (grams), (4) potassium (mg). Put zero if not applicable.
 				["Banana (without skin)", 81, 100, 358],
 				["Onion red (raw)", 38, 100, 146],
 				["Crooks (baby cucumber)", 14, 100, 147],
@@ -16,13 +15,35 @@
 					foodList.options[i] = new Option(foods[i][0], i);
 				}
 			}
+
+			function calculate() {
+				var food = foods[document.getElementById("foodList").value];
+				var amount = document.getElementById("amountBox").value;
+				let results = document.getElementById("results");
+				var units = parseFloat(food[2]);
+				var calories = Math.round(food[1] * amount / units);
+				var potassium = Math.round(food[3] * amount / units);
+				results.innerHTML = food[0] + " " + amount + " grams" + "<br/>" + " calories = " + calories + " potassium = " + potassium + " mg";
+			} 
 		</script>
+		<style>
+		</style>
 	</head>
 	<body>
 		<h3>Potassium Counter</h3>
-		<div>
+		<p>
 			<label>Choose a food:</label>
 			<select id="foodList"></select>
-		</div>
+		</p>
+		<p>
+			<label>Amount (grams)</label>
+			<input id="amountBox"></input>
+		</p>
+		<p>
+			<button id="calculateButton" onclick="calculate()">Calculate</button>
+		</p>
+		<p>
+			<label id="results"></label>
+		</p>
 	</body>
 </html>
