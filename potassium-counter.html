@@ -2,7 +2,7 @@
 	<head>
 		<title>Potassium Counter</title>
 		<script>
-			let foods = [
+			var foods = [
 				// (1) name, (2) calories, (3) units (grams), (4) potassium (mg). Put zero if not applicable.
 				["Banana (without skin)", 81, 100, 358],
 				["Crooks (baby cucumber)", 14, 100, 147],
@@ -10,8 +10,8 @@
 			];
 
 			window.onload = function() {
-				let foodList = document.getElementById("foodList");
-				for (let i = 0; i < foods.length; i++) {
+				var foodList = document.getElementById("foodList");
+				for (var i = 0; i < foods.length; i++) {
 					foodList.options[i] = new Option(foods[i][0], i);
 				}
 			}
@@ -19,7 +19,7 @@
 			function calculate() {
 				var food = foods[document.getElementById("foodList").value];
 				var amount = document.getElementById("amountBox").value;
-				let results = document.getElementById("results");
+				var results = document.getElementById("results");
 				var units = parseFloat(food[2]);
 				var calories = Math.round(food[1] * amount / units);
 				var potassium = Math.round(food[3] * amount / units);
